@@ -1,0 +1,442 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+body {
+  background-color: #0281e0;
+}
+
+.sidebar {
+  position: absolute;
+  height: 100vh;
+  top: 0;
+  left: -300px;
+  width: 300px;
+  background: white;
+  color: black;
+  z-index: 300;
+
+  display: flex;
+  flex-direction: column;
+  transition: left 0.4s ease-in-out;
+
+  padding-top: 7rem;
+  padding-inline: 3rem;
+}
+
+.sidebar.active {
+  left: 0;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: black;
+}
+
+.nft-logo {
+  position: absolute;
+  z-index: -8000;
+  color: white;
+  font-size: 50vh;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  font-weight: 500;
+}
+
+.banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  color: black;
+  padding: 10px 0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.scrolling-text {
+  white-space: nowrap;
+  display: inline-block;
+  animation: scroll 20s linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.space-guy {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: -100;
+}
+
+.space-guy img {
+  height: auto;
+  width: 60rem;
+}
+
+.profile-pic {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+}
+
+.bell {
+  width: 2rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 1.5rem;
+}
+
+.menu {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0.5rem;
+  background-color: white;
+  gap: 0.4rem;
+  width: 70px;
+  border-radius: 0.7rem;
+  z-index: 400;
+}
+
+.line {
+  width: 2rem;
+  height: 0.2rem;
+  background-color: black;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.hamburger:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.hamburger.active .line1 {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active .line2 {
+  opacity: 0;
+}
+
+.hamburger.active .line3 {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+.title {
+  color: white;
+  font-weight: 800;
+  font-size: 1.2rem;
+  letter-spacing: 0.2rem;
+}
+
+.links {
+  display: flex;
+  gap: 2rem;
+}
+
+.links a {
+  color: white;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 0.2rem;
+}
+
+.links a:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile img:hover,
+.profile i:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.profile i {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1840px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+}
+
+.section {
+  border-radius: 1rem;
+  width: 548px;
+  padding: 1.5rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(1px);
+  border: 1px solid (255, 255, 255, 0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.social-brands {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.social-brands .social-icons {
+  font-size: 2rem;
+  color: white;
+}
+
+.social-brands .social-icons:hover {
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+.cards {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.card {
+  padding: 2rem 0.8rem;
+  background-color: white;
+  border-radius: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 0.7rem;
+  font-size: 0.7rem;
+}
+
+.card:nth-child(2) {
+  margin-top: 1rem;
+}
+
+.card:nth-child(3) {
+  margin-top: 2rem;
+}
+
+.enjoy-art {
+  color: white;
+  font-style: italic;
+}
+
+.create {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.create input {
+  background: none;
+  outline: none;
+  border: 1px solid rgb(255, 255, 255, 0.3);
+  border-radius: 0.3rem;
+  padding: 0.6rem 1rem;
+  width: 100%;
+  color: white;
+  font-size: 1rem;
+}
+
+.create input::placeholder {
+  font-style: italic;
+}
+
+.create button {
+  background: white;
+  padding: 0.7rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 0.3rem;
+  opacity: 0.8;
+}
+
+.create button:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+.white {
+  color: white;
+}
+.sub-text {
+  font-weight: 800;
+}
+
+.how-to-use {
+  margin-top: 1rem;
+}
+
+.how-to-use p {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.design-button {
+  background-color: white;
+  color: black;
+  font-size: 1.5rem;
+  padding: 0.7rem;
+  border-radius: 0.7rem;
+  cursor: pointer;
+}
+
+.box2 {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.box2 h2 {
+  color: white;
+  font-size: 2.5rem;
+}
+
+.box2 .register {
+  display: flex;
+  gap: 1rem;
+}
+
+.register button {
+  padding: 1rem;
+  outline: none;
+  border: none;
+  font-size: 1.3rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.register button:nth-child(1) {
+  font-weight: 500;
+}
+
+.register button:nth-child(2) {
+  background: none;
+  border: 1px solid white;
+  color: white;
+}
+
+.ranking {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+
+.ranks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+.ranks span:first-child {
+  font-size: 2rem;
+}
+
+.comments-container {
+  position: relative;
+  perspective: 1000px; /* Enable 3D perspective for stacked effect */
+  width: 80%; /* Adjust width as needed */
+  margin: 50px auto; /* Center the container */
+}
+
+.comment {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  transition: transform 0.5s ease-in-out;
+  transform-origin: left center;
+}
+
+.comment:not(.active) {
+  transform: translateX(100%) rotateY(-10deg); /* Hide comments initially */
+  opacity: 0;
+  pointer-events: none; /* Disable pointer events for hidden comments */
+}
+
+.comment.active {
+  transform: translateX(0); /* Show active comment */
+  z-index: 1000; /* Ensure active comment is on top */
+}
+
+.comment p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.comment-profile {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.commenter-details {
+  display: flex;
+  flex-direction: column; /* Stack details vertically */
+}
+
+.navigation {
+  margin-left: auto;
+}
+
+.navigation i {
+  cursor: pointer;
+  margin-left: 10px;
+  font-size: 1.7rem;
+}
+
+.fa-arrow-left::before {
+  content: "←";
+}
+
+.fa-arrow-right::before {
+  content: "→";
+}
